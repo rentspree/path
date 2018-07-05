@@ -1,13 +1,10 @@
 // @flow
 
-import { buildPath, setErrorClass } from "./path"
 import { parse, stringify } from "./query-string"
 
-export default {
-  buildPath,
-  setErrorClass,
-  query: {
-    parse,
-    stringify
-  }
+export { buildPath, setErrorClass } from "./path"
+
+export const query = {
+  parse,
+  stringify
 }
