@@ -1,10 +1,13 @@
 // @flow
 
-/**
- * This function says hello.
- * @param name Some name to say hello for.
- * @returns The hello.
- */
-const sayHello = (name: string = "Haz"): string => `Hello, ${name}!`
+import { buildPath, setErrorClass } from "./path"
+import { parse, stringify } from "./query-string"
 
-export default sayHello
+export default {
+  buildPath,
+  setErrorClass,
+  query: {
+    parse,
+    stringify
+  }
+}
