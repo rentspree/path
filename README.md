@@ -6,16 +6,39 @@
 
 URL path params/query resolve with ease
 
+This is a helper librarly that combine the use of [path-to-regexp](#) with [qs](#) query string library. While those librarly work independently, the former is for generating path with path params, the latter is for generating query string from object (or in the reverse). This library combinses the use of these two path to build url.
+
+The library is written in ES6 most advance syntax.
+
+Please enjoy!
+
 ## Install
 
-    $ npm install --save rentspree-path
+    $ npm install --save @rentspree/path
+
+or if you are a fan of Yarn
+
+    $ yarn add @rentspree/path
 
 ## Usage
 
 ```js
-import myModule from "rentspree-path";
+import { buildPath } from "@rentspree/path";
 
-myModule();
+// return "/api/user/1234?name=John&lastName=Doe"
+buildPath("/api/user/:id", {id: "1234"}, {name: "John", lastName: "Doe"})
+```
+
+Or if you are interested in only using the query string append, you can surely do it
+
+```js
+import { query } from "@rentspree/path"
+
+// return "?name=John&lastName=Doe"
+query.stringify({name: "John", lastName: "Doe"})
+
+// returns {query: "hello", consulta: "hola"}
+query.parse("?query=hello&consulta=hola")
 ```
 
 ## API
