@@ -3,6 +3,7 @@ node_js:
 - v8
 script:
 - npm run lint && npm test
+- npm run build
 cache:
 - yarn
 deploy:
