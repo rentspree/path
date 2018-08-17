@@ -1,7 +1,15 @@
 language: node_js
 node_js:
-  - v8
+- v8
 script:
-  - npm run lint && npm test
+- npm run lint && npm test
 cache:
-  - yarn
+- yarn
+deploy:
+  provider: npm
+  email: junrai82@gmail.com
+  api_key:
+    secure: oO8clKEQ17fD+aBI2tUhssuCmd5QmtMmkGvcnkl8sXDYSKZL4c3a3x8u9sL3PA4Zr+65PKx5A3AF+IV6YUBoaBMT6q5RhzkFHQ5KsdU/fDIM953EZGApC1tl2OLMiTJ122X0bvG4PPsh/0OYrGhV4Fm0aIuLhO5ex+hzZXwJVeOwTfbwBsmtDvzru9yGLMYPLXH9PA9HHAdu88YSnnf2rGGc8gK0hfVFk5fRxfx/IfuJdvViJOdLxVl9aWazWef3lfsd5rDNFWqS0brxvg+ugiTF4GQTS5RUZCXb2fO938YqML8OReoNby//Ia1y8XfAlZ4NwVf6dgj8L4pbeWK/1dNl+VGk6/j2+0O21tng/An/6fA5dcpkkCCJZFFuImMWlH1/G+pLVeu3WlPO5inH3Jthu8fQ0g5HWKSusIdd99cgOx4f6SqW3Z9D4/y52zYPBEXriClZIDD8m3TSIgFeEVe5CgQbXrY/LTjjeIyYuQAtM4bH6ZbVTpg36vsDmS+9BM3X1qDUpy6+MiMCJmsA2YbSvR0fUZMw3FIZne4zwpus5+Z55lDbghwc9nuu4FPGuwY7m0lkVr0yKWqEDwfdb1/2HGKFCE9XoyM3I9dUTFXIFoX4R2EAafEaUYSSf3noG4glBh3t3mop0zLQV885Lepz5aOoF4je50ntmJNpd9s=
+  on:
+    tags: true
+    repo: rentspree/path
