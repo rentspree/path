@@ -28,7 +28,7 @@
     "prebuild": "npm run docs && npm run clean && npm run flowbuild",
     "build": "babel src -d dist",
     "watch": "npm-watch",
-    "prepublishOnly": "npm run lint && npm test && npm run build",
+    "xprepublishOnly": "npm run lint && npm test && npm run build",
     "xpostpublish": "git push origin master --follow-tags"
   },
   "watch": {
