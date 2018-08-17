@@ -6,8 +6,6 @@ script:
 - npm run build
 cache:
 - yarn
-before_deploy:
-- touch .npmignore
 deploy:
   provider: npm
   email: junrai82@gmail.com
