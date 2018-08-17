@@ -3,9 +3,10 @@ node_js:
 - v8
 script:
 - npm run lint && npm test
-- npm run build
 cache:
 - yarn
+before_deploy:
+- npm install
 deploy:
   provider: npm
   email: junrai82@gmail.com
