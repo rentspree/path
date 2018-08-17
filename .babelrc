@@ -2,10 +2,15 @@
   "presets": [
     ["env", {
       "targets": {
-        "node": 8
+        "browsers": ["defaults", "ie >= 10"]
       }
     }],
     "stage-2",
     "flow"
+  ],
+  "plugins": [
+    ["babel-plugin-transform-builtin-extend", {
+      "globals": ["Error"]
+    }]
   ]
 }
