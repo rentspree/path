@@ -4,7 +4,8 @@ node_js:
 script:
 - npm run lint && npm test
 cache:
-- yarn
+  directories:
+  - node_modules
 deploy:
   provider: npm
   email: junrai82@gmail.com
