@@ -8,6 +8,7 @@ cache:
 before_deploy:
 - npm install
 - npm run build
+- touch .npmignore
 deploy:
   provider: npm
   email: junrai82@gmail.com
