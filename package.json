@@ -40,7 +40,7 @@
     "rentspree-path"
   ],
   "dependencies": {
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "path-to-regexp": "^2.2.1",
     "qs": "^6.5.2"
   },
@@ -54,7 +54,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "documentation": "^7.1.0",
+    "documentation": "^9.3.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
