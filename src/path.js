@@ -65,16 +65,15 @@ export const setErrorClass = error => {
 
 /**
  * Build URL from URL-JOIN library
- * @param {String} path the path regex
- * @returns {String | null} the built path
+ * @param {String} args all path what you need to join
+ * @returns {String} the built path
  * @example
  * // return /api/user/123456?name=John&lastName=Doe
- * buildPath("/api/user/:id", {id: "123456"}, {name: "John", lastName: "Doe"}
+ * urlJoin("/api/user/123456", "?name=John&lastName=Doe")
  * @example
  * // return /content/post/this-is-a-good-post
- * buildPath("/content/post/:slug", {slug: "this-is-a-good-post"})
+ * urlJoin("/content/post///", "//this-is-a-good-post")
  */
-
 export const urlJoin = (...args) => {
   return urlJoinLib(args)
 }
