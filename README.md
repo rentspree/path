@@ -54,6 +54,7 @@ query.parse("?query=hello&consulta=hola")
 -   [setErrorClass](#seterrorclass)
     -   [Parameters](#parameters-1)
     -   [Examples](#examples-1)
+-   [urlJoin](#urljoin)
 -   [query](#query)
     -   [parse](#parse)
         -   [Parameters](#parameters-2)
@@ -61,6 +62,12 @@ query.parse("?query=hello&consulta=hola")
     -   [stringify](#stringify)
         -   [Parameters](#parameters-3)
         -   [Examples](#examples-3)
+- [subdomain](#subdomain)
+    -   [getSubdomain](#getsubdomain)
+        -   [Parameters](#parameters)
+        -   [Examples](#examples-4)
+    -   [parseSubdomain](#parsesubdomain)
+        
 
 ### ParamInterpolatedError
 
@@ -163,8 +170,21 @@ stringify({name: "John", lastName: "Doe"})
 
 Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the stringified query result
 
+### Subdomain
+
 #### getSubdomain
 This method get subdomain from the url
+##### Parameters
+```javascript
+getSubdomain(url, subdomains, defaultSub)
+```
+- `url`: The url that you want to get subdomain from
+- `subdomains`: The list of subdomains that you allow to get (default: `{}`)
+- `defaultSub`: The default return of subdomain (default: `rentspree`)
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the string of subdomain
+
+##### Examples
 ```javascript
 // return "apple"
 getSubdomain("https://apple.rentspree.com")
@@ -178,15 +198,24 @@ getSubdomain("cat.rentspree.com", {apple: "apple"})
 // return "www"
 getSubdomain("dog.rentspree.com", {apple: "apple"}, "www")
 ```
+
+#### parseSubdomain
+This method create url from provided subdomain, host, and path
 ##### Parameters
 ```javascript
-getSubdomain(url, subdomains, defaultSub)
+parseSubdomain(subdomain, host, path)
 ```
-- `url`: The url that you want to get subdomain from
-- `subdomains`: The list of subdomains that you allow to get (default: `{}`)
-- `defaultSub`: The default return of subdomain (default: `rentspree`)
 
-Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the string of subdomain
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** full url with subdomain
+
+##### Examples
+```javascript
+// return "https://foo.rentspree.com/dashboard"
+parseSubdomain("foo", "https://www.rentspree.com", "/dashboard")
+
+// return "https://www.rentspree.com/a/b/c
+parseSubdomain("rentspree", "https://www.rentspree.com", "a", "/b", "c")
+```
 
 ## License
 
