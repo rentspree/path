@@ -106,6 +106,21 @@ setErrorClass(SomeClass)
 // when the buildPath function failed it will throw something like this
 throw new SomeClass()
 ```
+### urlJoin
+Join all arguments together and normalize the resulting url. This function using **[url-join](https://github.com/jfromaniello/url-join)** library
+
+##### Examples
+
+```javascript
+// returns "/content/post/foo"
+urlJoin("/content/post/", "/foo")
+```
+
+```javascript
+// returns "/content/post?foo=bar"
+urlJoin("/content/post/", "?foo=bar")
+```
+
 
 ### query
 
