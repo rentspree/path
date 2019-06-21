@@ -148,6 +148,31 @@ stringify({name: "John", lastName: "Doe"})
 
 Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the stringified query result
 
+#### getSubdomain
+This method get subdomain from the url
+```javascript
+// return "apple"
+getSubdomain("https://apple.rentspree.com")
+
+// return "boy"
+getSubdomain("boy.rentspree.com", {apple: "apple", boy: "boy"})
+
+// return "rentspree"
+getSubdomain("cat.rentspree.com", {apple: "apple"})
+
+// return "www"
+getSubdomain("dog.rentspree.com", {apple: "apple"}, "www")
+```
+##### Parameters
+```javascript
+getSubdomain(url, subdomains, defaultSub)
+```
+- `url`: The url that you want to get subdomain from
+- `subdomains`: The list of subdomains that you allow to get (default: `{}`)
+- `defaultSub`: The default return of subdomain (default: `rentspree`)
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the string of subdomain
+
 ## License
 
 MIT © [Potsawee Vechpanich](https://github.com/rentspree)

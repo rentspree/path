@@ -1,22 +1,7 @@
+/* eslint-disable import/prefer-default-export */
 import pathToRegexp from "path-to-regexp"
 import { stringify } from "./query-string"
-/**
- * Default error class
- * @class ParamInterpolatedError
- */
-export class ParamInterpolatedError extends Error {
-  constructor(typeError) {
-    super(`ParamInterpolatedError: ${typeError.message}`)
-    this.name = "ParamInterpolatedError"
-    this.stack = typeError.stack
-  }
-}
-
-let ERROR_KLASS = ParamInterpolatedError
-
-export const throwError = e => {
-  throw new ERROR_KLASS(e)
-}
+import { throwError } from "./error"
 
 /**
  * Build path from path regexp and params and optionally append query suffix to the path
@@ -47,17 +32,4 @@ export const buildPath = (path, params, query) => {
     }
   }
   return null
-}
-
-/**
- * Set the Error class which would be thrown when buildPath function failed
- * @param {Class} error an Error class which would be thrown
- * @example
- * // if you set
- * setErrorClass(SomeClass)
- * // when the buildPath function failed it will throw something like this
- * throw new SomeClass()
- */
-export const setErrorClass = error => {
-  ERROR_KLASS = error
 }

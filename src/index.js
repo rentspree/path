@@ -1,10 +1,6 @@
 // @flow
 
-import { parse, stringify } from "./query-string"
-
-export { buildPath, setErrorClass } from "./path"
-
-export const query = {
-  parse,
-  stringify
-}
+export { parse, stringify } from "./query-string"
+export { buildPath } from "./build-path"
+export { setErrorClass } from "./error"
+export { getSubdomain } from "./get-subdomain"
