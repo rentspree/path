@@ -49,10 +49,18 @@ query.parse("?query=hello&consulta=hola")
 
 -   [ParamInterpolatedError](#paraminterpolatederror)
 -   [buildPath](#buildpath)
+    -   [Parameters](#parameters)
+    -   [Examples](#examples)
 -   [setErrorClass](#seterrorclass)
+    -   [Parameters](#parameters-1)
+    -   [Examples](#examples-1)
 -   [query](#query)
     -   [parse](#parse)
+        -   [Parameters](#parameters-2)
+        -   [Examples](#examples-2)
     -   [stringify](#stringify)
+        -   [Parameters](#parameters-3)
+        -   [Examples](#examples-3)
 
 ### ParamInterpolatedError
 
@@ -62,13 +70,13 @@ Default error class
 
 Build path from path regexp and params and optionally append query suffix to the path
 
-**Parameters**
+#### Parameters
 
 -   `path` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the path regex
 -   `params` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** the params to interpolate in path
 -   `query` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** the query object to be converted to string
 
-**Examples**
+#### Examples
 
 ```javascript
 // return /api/user/123456?name=John&lastName=Doe
@@ -86,11 +94,11 @@ Returns **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Set the Error class which would be thrown when buildPath function failed
 
-**Parameters**
+#### Parameters
 
 -   `error` **Class** an Error class which would be thrown
 
-**Examples**
+#### Examples
 
 ```javascript
 // if you set
@@ -105,11 +113,11 @@ throw new SomeClass()
 
 This method parse a query string into object
 
-**Parameters**
+##### Parameters
 
 -   `str` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the string to parse (optional, default `""`)
 
-**Examples**
+##### Examples
 
 ```javascript
 // returns {str1: "hello", str2: "hola"}
@@ -127,11 +135,11 @@ Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 This method stringify object into query string
 
-**Parameters**
+##### Parameters
 
 -   `obj` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** the object to be stringify (optional, default `{}`)
 
-**Examples**
+##### Examples
 
 ```javascript
 // returns "?name=John&lastName=Doe"

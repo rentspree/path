@@ -1,12 +1,11 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["defaults", "ie >= 10"]
       }
     }],
-    "stage-2",
-    "flow"
+    ["@babel/preset-flow"]
   ],
   "plugins": [
     ["babel-plugin-transform-builtin-extend", {
