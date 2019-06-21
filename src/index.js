@@ -2,7 +2,7 @@
 
 import { parse, stringify } from "./query-string"
 
-export { buildPath, setErrorClass } from "./path"
+export { buildPath, setErrorClass, urlJoin } from "./path"
 
 export const query = {
   parse,

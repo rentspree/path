@@ -3,7 +3,8 @@ import {
   buildPath,
   ParamInterpolatedError,
   setErrorClass,
-  throwError
+  throwError,
+  urlJoin
 } from "../src/path"
 
 chai.should()
@@ -71,9 +72,22 @@ describe("Path module", () => {
         param,
         query
       ).should.equal(
-        `/path/${param.firstParam}/with/${
-          param.secondParam
-        }?q1=imquery&q2=yo-man`
+        `/path/${param.firstParam}/with/${param.secondParam}?q1=imquery&q2=yo-man`
+      )
+    })
+  })
+  describe("urlJoin", () => {
+    it("should use url-join library collectly", () => {
+      urlJoin("/foo/bar/gee", "/321/123").should.equal("/foo/bar/gee/321/123")
+    })
+    it("should filter / when it is double and return collectly", () => {
+      urlJoin("/foo/bar/gee//", "///321/123").should.equal(
+        "/foo/bar/gee/321/123"
+      )
+    })
+    it("should join param collectly", () => {
+      urlJoin("/foo/bar/gee", "/321/123", "?test=12312").should.equal(
+        "/foo/bar/gee/321/123?test=12312"
       )
     })
   })

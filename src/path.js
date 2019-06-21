@@ -1,4 +1,5 @@
 import pathToRegexp from "path-to-regexp"
+import urlJoinLib from "url-join"
 import { stringify } from "./query-string"
 /**
  * Default error class
@@ -60,4 +61,20 @@ export const buildPath = (path, params, query) => {
  */
 export const setErrorClass = error => {
   ERROR_KLASS = error
+}
+
+/**
+ * Build URL from URL-JOIN library
+ * @param {String} path the path regex
+ * @returns {String | null} the built path
+ * @example
+ * // return /api/user/123456?name=John&lastName=Doe
+ * buildPath("/api/user/:id", {id: "123456"}, {name: "John", lastName: "Doe"}
+ * @example
+ * // return /content/post/this-is-a-good-post
+ * buildPath("/content/post/:slug", {slug: "this-is-a-good-post"})
+ */
+
+export const urlJoin = (...args) => {
+  return urlJoinLib(args)
 }

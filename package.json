@@ -43,7 +43,8 @@
   "dependencies": {
     "lodash": "^4.17.11",
     "path-to-regexp": "^2.2.1",
-    "qs": "^6.5.2"
+    "qs": "^6.5.2",
+    "url-join": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
