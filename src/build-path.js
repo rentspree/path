@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import pathToRegexp from "path-to-regexp"
-import _ from "lodash"
+import mapValues from "lodash.mapvalues"
+import toString from "lodash.tostring"
 import { stringify } from "./query-string"
 import { throwError } from "./error"
 
@@ -19,7 +20,7 @@ import { throwError } from "./error"
  */
 export const buildPath = (path, params, query) => {
   const toPath = pathToRegexp.compile(path)
-  const stringifiedParams = _.mapValues(params, _.toString)
+  const stringifiedParams = mapValues(params, toString)
   try {
     if (query) {
       // concatenate with query

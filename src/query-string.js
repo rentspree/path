@@ -1,5 +1,5 @@
 import qs from "qs"
-import _ from "lodash"
+import isEmpty from "lodash.isempty"
 /** @module query */
 
 /**
@@ -15,7 +15,7 @@ import _ from "lodash"
  * @memberof query
  */
 export const parse = (str = "") =>
-  !_.isEmpty(str) ? qs.parse(str.replace(/^\?/, "")) : {}
+  !isEmpty(str) ? qs.parse(str.replace(/^\?/, "")) : {}
 
 /**
  * This method stringify object into query string
@@ -27,4 +27,4 @@ export const parse = (str = "") =>
  * @memberof query
  */
 export const stringify = (obj = {}) =>
-  !_.isEmpty(obj) ? `?${qs.stringify(obj)}` : ""
+  !isEmpty(obj) ? `?${qs.stringify(obj)}` : ""

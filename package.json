@@ -41,7 +41,10 @@
     "rentspree-path"
   ],
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash.isempty": "^4.4.0",
+    "lodash.isnil": "^4.0.0",
+    "lodash.mapvalues": "^4.6.0",
+    "lodash.tostring": "^4.1.4",
     "path-to-regexp": "^2.2.1",
     "qs": "^6.5.2",
     "url-join": "^4.0.0"
